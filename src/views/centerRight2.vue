@@ -5,7 +5,7 @@
         <span>
           <icon name="align-left" class="text-icon"></icon>
         </span>
-        <span class="fs-xl text mx-2">产品销售渠道分析</span>
+        <span class="text mx-2">主要国家人均苹果消费量</span>
       </div>
       <div class="d-flex ai-center flex-column body-box">
         <dv-capsule-chart class="dv-cap-chart" :config="config" />
@@ -19,32 +19,26 @@
 export default {
   data() {
     return {
-      config: {
-        data: [
-          {
-            name: '南阳',
-            value: 167
-          },
-          {
-            name: '周口',
-            value: 67
-          },
-          {
-            name: '漯河',
-            value: 123
-          },
-          {
-            name: '郑州',
-            value: 55
-          },
-          {
-            name: '西峡',
-            value: 98
-          }
-        ]
-      }
+
     }
   },
+	computed: {
+		apple_consumption_data() {
+			return this.$store.state.apple_consumption_data
+		},
+		config() {
+			let data = []
+			for (let i = 0; i < this.apple_consumption_data.length; i++) {
+				data.push({
+					name: this.apple_consumption_data[i].country,
+					value: this.apple_consumption_data[i].consumption
+				})
+			}
+			return {
+				data: data
+			}
+		}
+	}
 }
 </script>
 
