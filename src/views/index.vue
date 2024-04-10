@@ -81,10 +81,10 @@
 <script>
 import drawMixin from "../utils/drawMixin";
 import { formatTime } from '../utils/index.js'
-import centerLeft1 from './centerLeft1'
-import centerRight2 from './centerRight2'
-import center from './center'
-import bottomLeft from './bottomLeft'
+import centerLeft1 from './appleCapacityData.vue'
+import centerRight2 from './appleConsumptionData.vue'
+import center from './appleEfficiencyData.vue'
+import bottomLeft from './appleProductionData.vue'
 import axios from "axios";
 
 export default {
