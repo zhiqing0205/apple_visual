@@ -81,9 +81,9 @@
             <dv-border-box-13>
               <bottomLeft />
             </dv-border-box-13>
-            <dv-border-box-12>
-              <bottomRight />
-            </dv-border-box-12>
+<!--            <dv-border-box-12>-->
+<!--              <bottomRight />-->
+<!--            </dv-border-box-12>-->
           </div>
         </div>
       </div>
@@ -100,7 +100,6 @@ import centerRight1 from './centerRight1'
 import centerRight2 from './centerRight2'
 import center from './center'
 import bottomLeft from './bottomLeft'
-import bottomRight from './bottomRight'
 
 export default {
   mixins: [ drawMixin ],
@@ -121,8 +120,7 @@ export default {
     centerRight1,
     centerRight2,
     center,
-    bottomLeft,
-    bottomRight
+    bottomLeft
   },
   mounted() {
     this.timeFn()
