@@ -56,11 +56,6 @@
                 <centerLeft1 />
               </dv-border-box-12>
             </div>
-            <div>
-              <dv-border-box-12>
-                <centerLeft2 />
-              </dv-border-box-12>
-            </div>
             <!-- 中间 -->
             <div>
               <center />
@@ -69,11 +64,6 @@
             <div>
               <centerRight2 />
             </div>
-            <div>
-              <dv-border-box-13>
-                <centerRight1 />
-              </dv-border-box-13>
-            </div>
           </div>
 
           <!-- 第四行数据 -->
@@ -81,9 +71,6 @@
             <dv-border-box-13>
               <bottomLeft />
             </dv-border-box-13>
-<!--            <dv-border-box-12>-->
-<!--              <bottomRight />-->
-<!--            </dv-border-box-12>-->
           </div>
         </div>
       </div>

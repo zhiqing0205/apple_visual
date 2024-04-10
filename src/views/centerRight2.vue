@@ -9,14 +9,12 @@
       </div>
       <div class="d-flex ai-center flex-column body-box">
         <dv-capsule-chart class="dv-cap-chart" :config="config" />
-        <centerRight2Chart1 />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import centerRight2Chart1 from '@/components/echart/centerRight/centerRightChart'
 
 export default {
   data() {
@@ -47,14 +45,13 @@ export default {
       }
     }
   },
-  components: { centerRight2Chart1 }
 }
 </script>
 
 <style lang="scss" scoped>
 #centerRight2 {
   $box-height: 410px;
-  $box-width: 340px;
+  $box-width: 620px;
   padding: 5px;
   height: $box-height;
   width: $box-width;
@@ -73,7 +70,7 @@ export default {
     overflow: hidden;
     .dv-cap-chart {
       width: 100%;
-      height: 160px;
+      height: 350px;
     }
   }
 }
