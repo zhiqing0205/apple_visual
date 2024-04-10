@@ -43,7 +43,7 @@ export default {
             }
           },
           legend: {
-            data: ["已贯通", "计划贯通", "贯通率"],
+            data: ["中国苹果产量", "世界苹果产量", "中国占世界比重"],
             textStyle: {
               color: "#B4B4B4"
             },
@@ -92,7 +92,7 @@ export default {
           ],
           series: [
             {
-              name: "贯通率",
+              name: "中国占世界比重",
               type: "line",
               smooth: true,
               showAllSymbol: true,
@@ -107,7 +107,7 @@ export default {
               data: newData.rateData
             },
             {
-              name: "已贯通",
+              name: "中国苹果产量",
               type: "bar",
               barWidth: 10,
               itemStyle: {
@@ -122,7 +122,7 @@ export default {
               data: newData.barData
             },
             {
-              name: "计划贯通",
+              name: "世界苹果产量",
               type: "bar",
               barGap: "-100%",
               barWidth: 10,

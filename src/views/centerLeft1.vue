@@ -6,7 +6,7 @@
           <icon name="chart-bar" class="text-icon"></icon>
         </span>
         <div class="d-flex">
-          <span class="fs-xl text mx-2">任务通过率</span>
+          <span class="text mx-2">苹果库容分布情况</span>
           <dv-decoration-3 class="dv-dec-3" />
         </div>
       </div>
