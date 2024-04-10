@@ -87,6 +87,7 @@ import centerRight1 from './centerRight1'
 import centerRight2 from './centerRight2'
 import center from './center'
 import bottomLeft from './bottomLeft'
+import axios from "axios";
 
 export default {
   mixins: [ drawMixin ],
@@ -98,7 +99,12 @@ export default {
       dateYear: null,
       dateWeek: null,
       weekday: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
-      decorationColor: ['#568aea', '#000000']
+      decorationColor: ['#568aea', '#000000'],
+	    apple_production_data: [],
+	    apple_capacity_data: [],
+	    apple_consumption_data: [],
+	    fruit_price_data: [],
+	    apple_efficiency_data: []
     }
   },
   components: {
@@ -111,7 +117,7 @@ export default {
   },
   mounted() {
     this.timeFn()
-    this.cancelLoading()
+	  this.get_data()
   },
   beforeDestroy () {
     clearInterval(this.timing)
@@ -124,11 +130,29 @@ export default {
         this.dateWeek = this.weekday[new Date().getDay()]
       }, 1000)
     },
-    cancelLoading() {
-      setTimeout(() => {
-        this.loading = false
-      }, 500)
-    }
+	  crawl_data() {
+		  axios.get('/api/crawl_data/').then(res => {
+				alert('爬取成功')
+			  this.get_data()
+		  })
+	  },
+	  get_data() {
+		  axios.get('/api/get_data/').then(res => {
+			  this.loading = false
+			  console.log(res)
+			  this.apple_production_data = res.data.apple_production
+			  this.apple_capacity_data = res.data.apple_capacity
+			  this.apple_consumption_data = res.data.apple_consumption
+			  this.fruit_price_data = res.data.fruit_price
+			  this.apple_efficiency_data = res.data.apple_efficiency
+
+			  this.$store.commit('setAppleProductionData', this.apple_production_data)
+			  this.$store.commit('setAppleCapacityData', this.apple_capacity_data)
+			  this.$store.commit('setAppleConsumptionData', this.apple_consumption_data)
+			  this.$store.commit('setFruitPriceData', this.fruit_price_data)
+			  this.$store.commit('setAppleEfficiencyData', this.apple_efficiency_data)
+		  })
+	  }
   }
 }
 </script>
